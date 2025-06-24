@@ -1,0 +1,32 @@
+---
+title: "Installation"
+description: "Getting started with TestResult is easy. Just follow these steps:"
+icon: "install"
+---
+
+1. [Download](https://testresult.co/downloads/testresult-reporter.zip) our test reporter.
+2. Add the reporter to your Playwright config:
+
+```js
+// playwright.config.js
+
+const reporter = [];
+if (process.env.CI) {
+  reporter.push(["./testresult-reporter.js"]);
+}
+module.exports = defineConfig({
+  reporter,
+  // ... rest of your config
+});
+```
+
+3. Set your environment variables:
+
+```
+export API_KEY= Find in Account Settings
+export TEST_SUITE_UUID= Find it on your test suite page
+```
+
+4. Run your tests!
+
+Results should start showing up in your TestResult account immediately after your test run completes. Paid account will have unlimited access to historical results.
