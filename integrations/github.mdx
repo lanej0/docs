@@ -1,0 +1,96 @@
+---
+title: "GitHub Integration"
+description: "TestResult.co provides seamless integration with GitHub, allowing you to:"
+icon: "github"
+---
+
+- Create issues for failing tests
+- Generate pull requests to skip flaky tests
+- Track test cases across your GitHub repositories
+
+## Setup
+
+1. Go to GitHub Settings → Developer Settings
+2. Click on "Personal access tokens" and generate a new token
+3. For fine-grained tokens, ensure the following permissions:
+
+   - Repository access to your target repository
+   - Contents: Read and write
+   - Pull requests: Read and write
+   - Issues: Read and write
+
+4. Copy the token and paste it into the TestResult.co account settings.
+5. Save the settings.
+
+## Features
+
+### Automatic Issue Creation
+
+When a test fails, you can automatically create a GitHub issue with detailed test information:
+
+- Test suite and test name
+- Current status
+- File location and line number
+- Error message (if available)
+- Test duration
+- Flaky test status
+- Direct link to the test case in TestResult.co
+
+#### Example Issue:
+
+> ## Test Case Details
+>
+> ---
+>
+> - Suite: Login Tests
+> - Test: shouldloginsuccessfully
+> - Status: Failed
+> - File: tests/login/login.spec.ts:25
+> - Project: Web App
+>
+> ## Error Message
+>
+> `AssertionError: expected element to be visible`
+>
+> ## Additional Information
+>
+> - Duration: 2.5s
+> - Flaky: No
+>
+> [View Test Case](https://testresult.co/...)
+
+### Skip Test Pull Requests
+
+For flaky or problematic tests, you can automatically generate a pull request that adds a skip annotation:
+
+1. Navigate to the test case details
+2. Click "Create Skip PR"
+3. A new pull request will be created with:
+   - Skip annotation added to the test
+   - Detailed description of why the test is being skipped
+   - Link back to the test case in TestResult.co
+
+## Troubleshooting
+
+Common issues and solutions:
+
+### Invalid Repository URL
+
+- Ensure the URL is in the correct format: `https://github.com/owner/repository`
+- Both HTTPS and SSH URLs are supported
+
+### Permission Errors
+
+- Verify your access token has the required permissions
+- Ensure the token hasn't expired
+- Check that the token has access to the target repository
+
+### Rate Limiting
+
+- The GitHub API has rate limits
+- Consider using a fine-grained token to avoid organization-wide rate limits
+
+<Warning>
+  Keep your GitHub access token secure and never share it publicly. You can
+  regenerate the token at any time if you suspect it has been compromised.
+</Warning>

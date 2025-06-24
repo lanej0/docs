@@ -27,6 +27,10 @@
               "essentials/navigation",
               "essentials/reusable-snippets"
             ]
+          },
+          {
+            "group": "Integrations",
+            "pages": ["integrations/github"]
           }
         ]
       },
