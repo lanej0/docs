@@ -1,0 +1,111 @@
+---
+title: "Flaky Tests"
+description: "Flaky tests are tests that produce inconsistent results when run multiple times without any code changes."
+icon: "snowflake"
+---
+
+These tests can pass in one run and fail in another, indicating potential issues with:
+
+- Race conditions
+- Timing dependencies
+- Environmental factors
+- Resource constraints
+- Async operations
+
+## How Flaky Tests are Detected
+
+The system identifies flaky tests by analyzing test results within a single test run. A test is considered flaky if:
+
+1. It has multiple execution attempts with different statuses
+2. The final status differs from previous attempts
+
+For example, if a test:
+
+1. First attempt: FAILED
+2. Second attempt: PASSED
+
+This would be identified as a flaky test because the statuses are different.
+
+## Flaky Test Dashboard
+
+The flaky tests dashboard provides a comprehensive view of all flaky tests in your test suite. For each flaky test, you can see:
+
+- Test name and suite
+- Number of flake occurrences
+- First and latest flake timestamps
+- Affected projects
+- Current ownership status
+- Resolution status
+
+## Threshold Indicators
+
+Tests are marked with different indicators based on their flakiness level:
+
+🟢 Green Check: Test is within acceptable flakiness thresholds or has been resolved
+
+🟡 Yellow Warning: Test exceeds the configured flaky test threshold
+
+🔴 Red Warning: Test is more than twice the acceptable threshold
+
+## Managing Flaky Tests
+
+You can manage flaky tests through several actions:
+
+### Ownership
+
+- Claim ownership of a flaky test
+- Assign ownership to team members
+- Release ownership when needed
+
+### Resolution
+
+- Mark tests as resolved when fixed
+- Automatically marked as unresolved if they flake again
+- Track resolution history
+
+### Filtering
+
+- View flaky tests within different timeframes:
+  - All Time
+  - Today
+  - This Week
+  - Last 2 Weeks
+  - This Month
+
+## Test Case Activities
+
+The system tracks flaky test occurrences as test case activities. Each time a test exhibits flaky behavior:
+
+- A test run activity is created with the flaky flag
+- If the test was previously marked as resolved, it will automatically be marked as unresolved
+- A resolution change activity is created to document the change
+
+## Integration with CI/CD
+
+The TestResult reporter automatically detects and reports flaky tests during your CI/CD pipeline. To enable flaky test detection:
+
+1. Install the TestResult reporter
+2. Configure your Playwright tests to use retries
+3. The reporter will automatically track test results and identify flaky behavior
+
+## Best Practices
+
+1. Set Appropriate Thresholds
+
+   - Configure flaky test thresholds based on your team's quality standards
+   - Monitor trends to adjust thresholds as needed
+
+2. Quick Response
+
+   - Assign ownership promptly when new flaky tests are detected
+   - Investigate and fix flaky tests before they impact team productivity
+
+3. Documentation
+
+   - Document patterns that led to flaky tests
+   - Share fixes and preventive measures with the team
+
+4. Regular Review
+   - Schedule regular reviews of flaky tests
+   - Track progress on resolution
+   - Identify common patterns or areas needing architectural improvements

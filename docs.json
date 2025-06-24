@@ -15,17 +15,17 @@
         "groups": [
           {
             "group": "Get Started",
-            "pages": ["index", "quickstart", "development"]
+            "pages": ["index"]
           },
           {
             "group": "Essentials",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "essentials/test-cases",
+              "essentials/test-runs",
+              "essentials/test-case-activities",
+              "essentials/flaky-tests",
+              "essentials/slow-tests",
+              "essentials/bookmarks"
             ]
           },
           {

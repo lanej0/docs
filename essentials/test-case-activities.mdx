@@ -1,0 +1,65 @@
+---
+title: "Test Case Activities"
+description: "Test case activities provide a detailed history of everything that happens to a test case over time."
+icon: "vial-circle-check"
+---
+
+Each activity represents an event or action related to the test case, such as test runs, ownership changes, or resolution updates.
+
+## Types of Activities
+
+The system tracks several types of activities:
+
+- Test Runs: Records of each time the test is executed
+- Ownership Changes: When someone claims or is assigned ownership
+- Resolution Changes: When a test is marked as resolved or unresolved
+- GitHub Integration: Creation of issues or PRs related to the test
+
+## Activity Details
+
+Each activity includes:
+
+- Status (passed, failed, skipped)
+- Duration
+- Timestamp
+- User who performed the action (for manual activities)
+- Optional notes
+- Error messages (for failed tests)
+- Flaky test indication
+
+## Activity Timeline
+
+Activities are displayed in chronological order with the most recent at the top. The timeline includes:
+
+- Visual indicators for different activity types
+- Time gaps between activities
+- Expandable notes sections
+- Status badges
+
+## Adding Notes
+
+Users can add or edit notes for any activity by:
+
+1. Clicking the edit button on an activity
+2. Entering notes in the modal window
+3. Saving the changes
+
+Notes support Markdown formatting for rich text documentation.
+
+## Automatic Activities
+
+The system automatically creates activities for:
+
+- Test run results from CI/CD pipelines
+- Flaky test detection
+- Resolution status changes when tests fail
+- GitHub issue/PR creation
+
+## Activity Retention
+
+All activities are retained indefinitely to maintain a complete history of the test case. This helps with:
+
+- Debugging intermittent issues
+- Tracking ownership history
+- Monitoring test reliability
+- Documenting resolution processes

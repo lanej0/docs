@@ -1,0 +1,32 @@
+---
+title: "Test Cases"
+description: "The Test Cases page displays automated test cases for a specific test suite in TestResult."
+icon: "vials"
+---
+
+## Overview
+
+This page provides a comprehensive view of all test cases from the latest test run, with features for efficient browsing and searching.
+
+## Features
+
+### Header Section
+
+- Displays the test suite name in the page title
+- Shows a clear heading "Automated Test Cases for [Test Suite Name]"
+- Includes a subtitle indicating that the view shows test cases from the latest test run
+
+### Search Functionality
+
+- Real-time search capability for test cases
+- Search bar with intuitive placeholder text
+- Search icon button for visual clarity
+- Instant search results using Turbo and custom search submit controller
+
+### Test Cases Display
+
+- Lists test cases grouped by certain criteria (defined in the \_test_case_rows partial)
+  Implements infinite scrolling for better performance with large datasets
+  Shows 100 entries per page
+  Automatically loads more content as the user scrolls
+  Displays a loading spinner during content fetching

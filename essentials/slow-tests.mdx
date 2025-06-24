@@ -1,0 +1,34 @@
+---
+title: "Slow Tests"
+description: "The Slow Tests Analysis page provides detailed insights into tests that are taking longer than expected to execute in your test suite."
+icon: "gauge-low"
+---
+
+This feature helps identify performance bottlenecks in your test suite.
+
+## Overview
+
+The page displays tests that exceeded a configured time threshold, helping you identify which tests might need optimization. Each test run can be analyzed for slow tests, with results displayed in an easy-to-navigate format.
+
+## Features
+
+- Threshold Display: The current slow test threshold is prominently displayed at the top of the page. This threshold can be configured per test run and is shown in either milliseconds (for durations under 1 second) or seconds (for longer durations).
+- Navigation: Easy access back to the main test run page via a "Back to Test Run" button.
+- Infinite Scrolling: Test results are loaded dynamically as you scroll, with 20 entries per page, improving page performance for large test suites.
+- Back to Top: A floating button appears when scrolling down, allowing quick navigation back to the top of the page.
+
+## Test Results Display
+
+For each slow test, a card is displayed containing:
+
+- Test execution time
+- Test name and details
+- Additional context about the test's performance
+
+## Status Messages
+
+The page provides different status messages based on the test run configuration:
+
+- If no tests exceed the threshold, a success message is displayed
+- If no threshold is configured, a warning message is shown
+- When tests exceed the threshold, they are listed with their execution times
