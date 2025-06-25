@@ -15,7 +15,7 @@
         "groups": [
           {
             "group": "Get Started",
-            "pages": ["index"]
+            "pages": ["index", "privacy-policy", "terms-of-service"]
           },
           {
             "group": "Essentials",
