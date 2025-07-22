@@ -1,5 +1,45 @@
 ---
-title: "Configuration"
-description: "There are a number of settings you can tweak with the TestResult reporter."
+title: "TestResult Reporter Configuration Options"
+description: "This document outlines all available configuration options for the TestResult Reporter (`testresult-reporter.js` and `testresult-reporter.ts`)."
 icon: "gear"
 ---
+
+## Environment Variables
+
+The reporter primarily uses environment variables for configuration:
+
+### Required Configuration
+
+| Variable          | Description                                   | Example                                |
+| ----------------- | --------------------------------------------- | -------------------------------------- |
+| `API_KEY`         | Your TestResult.co API key for authentication | `tr_1234567890abcdef`                  |
+| `TEST_SUITE_UUID` | UUID of your test suite in TestResult.co      | `550e8400-e29b-41d4-a716-446655440000` |
+
+### Optional Configuration
+
+| Variable       | Type   | Default                            | Description                                                                           |
+| -------------- | ------ | ---------------------------------- | ------------------------------------------------------------------------------------- |
+| `API_URL`      | String | `https://app.testresult.co/api/v1` | Base URL for the TestResult.co API. Override for self-hosted instances or development |
+| `TEST_RUN_ID`  | String | Auto-generated UUID                | Custom test run identifier. If not provided, a random UUID is generated               |
+| `DEBUG_REPORT` | String | `"0"`                              | Enable debug mode when set to `"1"`. Creates local JSON files with test results       |
+| `MUTE_CONSOLE` | String | `"0"`                              | Suppress console output when set to `"1"`                                             |
+
+## Constructor Options
+
+When initializing the reporter programmatically, you can pass a configuration object:
+
+```javascript
+// JavaScript
+const reporter = new TestResultReporter({
+  debugReport: true, // Enable debug file output
+  muteConsole: false, // Allow console output
+});
+```
+
+```typescript
+// TypeScript
+const reporter = new TestResultReporter({
+  debugReport: true, // Enable debug file output
+  muteConsole: false, // Allow console output
+});
+```
